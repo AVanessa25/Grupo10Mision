@@ -1,8 +1,6 @@
 function click_boton(){
 
 
-
-
 function checkNombre ()
 {
 let nombre = document.getElementById("nombre").value;
@@ -23,7 +21,7 @@ function checkTelefono()
  let telefono = document.getElementById("telefono").value;
  registrar_telefono(telefono, "telefono");
  }
-
+}
 //cambio    
 function checkContrasena() {
     let p1 = document.getElementById("password").value;
@@ -96,7 +94,7 @@ function registrar_telefono(campo, ref_campo) {
     else if (verificacion == 4){
         alert("El campo " + ref_campo + " no se puede dejar vacío");
     }
-}
+
 
 function validar_correo(campo, ref_campo) {
 
