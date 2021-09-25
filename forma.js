@@ -37,7 +37,7 @@ function registrar_telefono(campo, ref_campo) {
         alert("El campo " + ref_campo + " solo admite numeros");
     }
     else if (verificacion == 3){
-        alert("El campo " + ref_campo + " debe contener 5 digitos");
+        alert("El campo " + ref_campo + " debe contener 7 digitos");
     }
     else if (verificacion == 4){
         alert("El campo " + ref_campo + " no se puede dejar vacío");
@@ -120,25 +120,27 @@ function validar_correo(campo){
         if(array_campo.length == 7){
             for(let i=0; i<array_campo.length; i++)
             {                
-                if(array_campo[i] == "" || array_campo[i] == "1" || array_campo[i] == "2" || array_campo[i] == "3" || array_campo[i] == "4" || array_campo[i] == "5" || array_campo[i] == "6" || array_campo[i] == "7" || array_campo[i] == "8" || array_campo[i] == "9"){ 
-                                                        
+                if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(array_campo)){
+                    
+                    verificacion= 1;
+                                                       
                 }
                 else
                 {
                     verificacion = 2;
-                    i = array_campo.length;  
+                     
                 }
             }
         }
         else
         {
-            verificacion = 3;
+            verificacion = 1;
         }
 
     }
     else
     {
-        verificacion = 4;
+        verificacion = 3;
     }
     return verificacion;
 }
