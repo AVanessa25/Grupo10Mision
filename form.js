@@ -172,3 +172,6 @@ function validar_numero(campo){
     }
     return verificacion;
 }
+
+
+}
