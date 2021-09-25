@@ -7,7 +7,7 @@ function click_boton()
     registrar_campo(name, "nombre");
     registrar_campo(apellido, "apellido");
     registrar_telefono(telefono, "telefono");
-    registrar_correo(correo,"correo");
+    validar_correo(correo,"correo");
     
 
 }
@@ -44,19 +44,6 @@ function registrar_telefono(campo, ref_campo) {
     }
 }
 
-function registrar_correo(campo, ref_campo) {
-    let verificacion = validar_correo(campo);    
-    if (verificacion == 1){
-        alert("El campo " + ref_campo + " fue ingresado correctamente");
-    }
-    else if (verificacion == 2){
-        alert("El campo " + ref_campo + " solo admite correo valido");
-    }
-  
-    else if (verificacion == 3){
-        alert("El campo " + ref_campo + " no se puede dejar vacío");
-    }
-}
 
 function validar_texto(campo){
     let array_campo = Array.from(campo);
@@ -113,7 +100,7 @@ function validar_numero(campo){
     return verificacion;
 }
 
-function validar_correo(campo){
+function validarCorreo(campo,ref_campo){
     let array_campo = Array.from(campo);
     let verificacion = 1;
     if(campo != ""){
@@ -144,3 +131,18 @@ function validar_correo(campo){
     }
     return verificacion;
 }
+
+function validar_correo(campo, ref_campo) {
+
+    if(campo != ""){
+
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(campo)){
+     alert("La dirección de email " + campo, + " es correcta.");
+    } else {
+     alert("La dirección de email es incorrecta.");
+    }
+  }else {
+    alert("La dirección de email es vacia.");
+
+   }
+    }
